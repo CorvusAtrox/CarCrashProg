@@ -10,11 +10,25 @@ if (is_dir($dir)){
 			//echo fread($myfile,filesize($myf));
 			$filecontent = file_get_contents($myf);
 			$chars = preg_split('//', $filecontent, -1, PREG_SPLIT_NO_EMPTY);
-			for ($i = 0; $i < count($chars); $i++) {
-				echo "<pre>";
+			$ent = 0;
+			for ($i = 190; $i < count($chars); $i++) {
+				//if($i > 0){
+					if(ctype_space($chars[$i-1]) && $ent == 0){
+						echo "<pre>";
+					}
+				//}
 				//echo strcmp($chars[$i],'Á');
 				echo($chars[$i]);
-				echo "</pre>";
+				if($i < count($chars) - 1){
+					if(ctype_space($chars[$i+1])){
+						if($ent == 5){
+							echo "</pre>";
+							$ent = 0;
+						} else {
+							$ent++;
+						}
+					}
+				}
 			}
 			fclose($myfile);
 			echo "<br>";
