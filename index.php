@@ -17,6 +17,11 @@ Folder: <input type="text" name="folder"><br>
 <input type="submit" value="Get">
 </form>
 
+<form action="readFile.php" method="post">
+File: <input type="text" name="fil"><br>
+<input type="submit" value="Char by Char">
+</form>
+
 </body>
 </html>
 
