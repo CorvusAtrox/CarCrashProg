@@ -11,22 +11,22 @@ if (is_dir($dir)){
 			$filecontent = file_get_contents($myf);
 			$chars = preg_split('//', $filecontent, -1, PREG_SPLIT_NO_EMPTY);
 			$ent = 0;
-			for ($i = 190; $i < count($chars); $i++) {
-				//if($i > 0){
-					if(ctype_space($chars[$i-1]) && $ent == 0){
-						echo "<pre>";
-					}
-				//}
-				//echo strcmp($chars[$i],'Á');
-				echo($chars[$i]);
-				if($i < count($chars) - 1){
-					if(ctype_space($chars[$i+1])){
-						if($ent == 5){
+			$sev = false;
+			//Code for zwkz
+			for ($i = 192; $i < count($chars); $i++) {
+				if(!ctype_space($chars[$i])){
+					echo($chars[$i]);
+					if($sev == false && $ent >= 10 && $chars[$i] == '7'){
+						$sev = true;
+					} else {
+						$ent = ($ent+1)%14;
+						if($ent==0){
 							echo "</pre>";
-							$ent = 0;
-						} else {
-							$ent++;
+							echo "<pre>";
+						} else if ($ent > 9){
+							echo " ";
 						}
+						$sev = false;
 					}
 				}
 			}
