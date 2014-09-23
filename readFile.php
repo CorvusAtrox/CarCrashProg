@@ -6,3 +6,15 @@
 	print_r($chars);
 	echo "</pre>";
 ?>
+
+<html>
+
+<head>
+<title>Car Crash Data</title>
+
+</head>
+
+<body bgcolor="#ECDEC9" text="000000">
+<font face="Times New Roman"</font>
+
+</html>
