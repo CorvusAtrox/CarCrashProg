@@ -17,6 +17,7 @@ if (is_dir($dir)){
     while (($file = readdir($dh)) !== false){
       echo "filename:" . $file . "<br>";
 		if(pathinfo($file, PATHINFO_EXTENSION) == 'dbf'){
+			$ft = substr($file, 0, 4);
 			$myf = $dir . '/' . $file;
 			$filecontent = file_get_contents($myf);
 			$chars = preg_split('//', $filecontent, -1, PREG_SPLIT_NO_EMPTY);
