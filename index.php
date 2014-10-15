@@ -22,6 +22,11 @@ File: <input type="text" name="fil"><br>
 <input type="submit" value="Char by Char">
 </form>
 
+<form action="viewMeta.php" method="post">
+File: <input type="text" name="mtd"><br>
+<input type="submit" value="Get Metadata">
+</form>
+
 </body>
 </html>
 

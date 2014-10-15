@@ -1,0 +1,37 @@
+START_TYPE zcta
+
+sp 
+
+start keys
+
+
+end keys
+
+END_TYPE
+
+START_TYPE zenv
+
+sp 
+
+start keys
+
+
+end keys
+
+END_TYPE
+
+START_TYPE zwkz
+
+sp 192
+
+startkeys
+
+Crash_Key 10
+WZ_Related 1
+WZ_Loc 1s
+WZ_Type 1s
+Workers 1s
+
+endkeys
+
+END_TYPE

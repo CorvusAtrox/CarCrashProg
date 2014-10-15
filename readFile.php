@@ -5,6 +5,16 @@
 	echo "<pre>";
 	print_r($chars);
 	echo "</pre>";
+	/*$f = 0;
+	$filer = fopen($fir,"r");
+	while(! feof($filer)){
+		$line = fgets($filer);
+		while(! feof($line)){
+		    printf("%d %c", $f, fgetc($line));
+			$f++;
+		}
+	}
+	fclose($filer);*/
 ?>
 
 <html>
